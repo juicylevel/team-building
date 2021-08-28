@@ -3,7 +3,7 @@ import { createTheme } from '@material-ui/core/styles';
 const theme = createTheme({
     palette: {},
     typography: {
-        fontFamily: 'Roboto Slab, sans-serif',
+        fontFamily: 'Rubik, sans-serif',
     },
     overrides: {
         MuiCssBaseline: {
