@@ -9,8 +9,9 @@ const Title = styled(Typography)(({ theme }) => ({
     textAlign: 'center',
     lineHeight: 1.6,
     width: '90%',
+    wordBreak: 'break-word',
     [theme.breakpoints.only('xs')]: {
-        fontSize: '2.2rem',
+        fontSize: '2.1rem',
     },
 }));
 
