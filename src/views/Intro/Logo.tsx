@@ -1,24 +1,28 @@
 import { styled } from '@material-ui/core/styles';
 import logo from 'images/logo.svg';
 
-const Box = styled('div')({
-    width: '467px',
-    height: '250px',
-    padding: '30px 70px',
-    backgroundColor: 'rgb(255 255 255 / 70%)',
-    boxShadow: '0 5px 10px rgb(0 0 0 / 10%)',
-});
+const originWidth = 1854.11;
+const originHeight = 725.13;
 
-const Pic = styled('div')({
-    width: '100%',
-    height: '100%',
-    background: `url(${logo}) 50% no-repeat`,
-});
+type Size = {
+    width: string;
+    height: string;
+};
 
-const Logo = () => (
-    <Box>
-        <Pic />
-    </Box>
-);
+const calcSize = (requestWidth: number): Size => {
+    return {
+        width: requestWidth + 'px',
+        height: (requestWidth * originHeight) / originWidth + 'px',
+    };
+};
+
+const Logo = styled('div')(({ theme }) => ({
+    backgroundImage: `url(${logo})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'contain',
+    backgroundPosition: 'center',
+    [theme.breakpoints.up('xs')]: calcSize(240),
+    [theme.breakpoints.up('md')]: calcSize(300),
+}));
 
 export default Logo;
