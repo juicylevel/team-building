@@ -13,6 +13,9 @@ const StyledSection = styled(Section)(({ theme }) => ({
     [theme.breakpoints.up('xs')]: {
         backgroundPositionX: '67%',
     },
+    [theme.breakpoints.up('sm')]: {
+        backgroundPositionX: '70%',
+    },
 }));
 
 const Header = styled('header')(({ theme }) => ({
@@ -48,9 +51,8 @@ const ContentWrapper = styled(VFlexBox)(({ theme }) => ({
 
 const Title = styled(Typography)(({ theme }) => ({
     textTransform: 'uppercase',
-    lineHeight: 0.8,
     [theme.breakpoints.only('xs')]: {
-        fontSize: '1.4rem',
+        fontSize: '1.45rem',
     },
     [theme.breakpoints.up('xs')]: {
         marginTop: theme.spacing(4),
