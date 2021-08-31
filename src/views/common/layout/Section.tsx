@@ -5,8 +5,10 @@ type SectionProps = {
 };
 
 const Section = styled('section')({
-    height: '100vh',
     backgroundColor: (props: SectionProps) => props.color || '#fff',
+    '@media (min-height: 462px)': {
+        height: '100vh',
+    },
 });
 
 export default Section;

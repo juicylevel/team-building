@@ -1,74 +1,80 @@
-import { Typography } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
-import { VFlexBox } from 'components/flexBox';
+import { Marker } from 'components';
+import { SectionTitle } from 'views/common';
 import { Section } from 'views/common/layout';
 import Logo from './Logo';
 
 const StyledSection = styled(Section)(({ theme }) => ({
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
     background: 'url(./images/intro.jpeg) bottom no-repeat',
     backgroundSize: 'cover',
-    [theme.breakpoints.up('xs')]: {
-        backgroundPositionX: '67%',
+    '@media (min-height: 590px)': {
+        paddingTop: '15vh',
     },
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.down('xs')]: {
+        backgroundPositionX: '67%',
+        paddingTop: 0,
+    },
+    [theme.breakpoints.down('sm')]: {
         backgroundPositionX: '70%',
     },
 }));
 
-const Header = styled('header')(({ theme }) => ({
-    display: 'flex',
-    backgroundColor: 'rgb(255 255 255 / 70%)',
+const Header = styled(Grid)(({ theme }) => ({
     boxShadow: '0 5px 10px rgb(0 0 0 / 10%)',
+}));
+
+const Title = styled(SectionTitle)(({ theme }) => ({
+    color: '#fff',
+    [theme.breakpoints.only('xs')]: {
+        fontSize: '2.6rem',
+        textAlign: 'center',
+    },
+}));
+
+const Cell = styled(Grid)(({ theme }) => ({
+    display: 'flex',
+    padding: '50px',
+    [theme.breakpoints.down('sm')]: {
+        height: '207px',
+    },
+    [theme.breakpoints.down('xs')]: {
+        paddingLeft: '15px',
+        paddingRight: '15px',
+    },
+}));
+
+const LightCell = styled(Cell)(({ theme }) => ({
+    backgroundColor: 'rgb(255 255 255 / 70%)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    [theme.breakpoints.only('sm')]: {
+        justifyContent: 'flex-start',
+    },
+    [theme.breakpoints.only('xs')]: {
+        backgroundColor: 'rgb(255 255 255 / 90%)',
+    },
+}));
+
+const DarkCell = styled(Cell)(({ theme }) => ({
+    backgroundColor: 'rgb(0 0 0 / 65%)',
+    alignItems: 'center',
     [theme.breakpoints.only('xs')]: {
         justifyContent: 'center',
-        backgroundColor: 'rgb(255 255 255 / 85%)',
-    },
-    [theme.breakpoints.up('xs')]: {
-        paddingTop: '40px',
-        paddingBottom: '40px',
-    },
-    [theme.breakpoints.up('sm')]: {
-        paddingLeft: '80px',
-        paddingTop: '50px',
-        paddingBottom: '50px',
-    },
-    [theme.breakpoints.up('md')]: {
-        paddingLeft: '100px',
-    },
-    [theme.breakpoints.up('lg')]: {
-        paddingLeft: '160px',
-    },
-}));
-
-const ContentWrapper = styled(VFlexBox)(({ theme }) => ({
-    [theme.breakpoints.only('xs')]: {
-        width: '280px',
-    },
-}));
-
-const Title = styled(Typography)(({ theme }) => ({
-    textTransform: 'uppercase',
-    [theme.breakpoints.only('xs')]: {
-        fontSize: '1.45rem',
-    },
-    [theme.breakpoints.up('xs')]: {
-        marginTop: theme.spacing(4),
-    },
-    [theme.breakpoints.up('sm')]: {
-        marginTop: theme.spacing(5),
     },
 }));
 
 const Intro = () => (
     <StyledSection>
-        <Header>
-            <ContentWrapper>
+        <Header container>
+            <LightCell item xl={2} lg={3} md={4} sm={12} xs={12}>
                 <Logo />
-                <Title variant="h4">Снова зовёт на старт!</Title>
-            </ContentWrapper>
+            </LightCell>
+            <DarkCell item xl={10} lg={9} md={8} sm={12} xs={12}>
+                <Title variant="h2">
+                    Снова зовет на <Marker>старт!</Marker>
+                </Title>
+            </DarkCell>
         </Header>
     </StyledSection>
 );

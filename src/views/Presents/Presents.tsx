@@ -1,5 +1,4 @@
 import { Typography } from '@material-ui/core';
-import { styled } from '@material-ui/core/styles';
 import { CenterFlexBox, VFlexBox } from 'components/flexBox';
 import { Section } from 'views/common/layout';
 

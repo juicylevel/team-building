@@ -13,14 +13,14 @@ const Main = () => (
     <main>
         <Intro />
         <Greeting />
-        <GrandPrize />
+        {/* <GrandPrize />
         <Presents />
         <EventDate />
         <Participate />
         <EventCountdown />
         <Prevresults />
         <SeeYou />
-        <Footer />
+        <Footer /> */}
     </main>
 );
 

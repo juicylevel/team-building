@@ -21,8 +21,9 @@ const Logo = styled('div')(({ theme }) => ({
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
     backgroundPosition: 'center',
-    [theme.breakpoints.up('xs')]: calcSize(240),
-    [theme.breakpoints.up('md')]: calcSize(300),
+    [theme.breakpoints.down('xs')]: calcSize(240),
+    // [theme.breakpoints.up('md')]: calcSize(300),
+    ...calcSize(300),
 }));
 
 export default Logo;
