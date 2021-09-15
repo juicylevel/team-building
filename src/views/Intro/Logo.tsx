@@ -1,29 +1,19 @@
 import { styled } from '@material-ui/core/styles';
+import { createImageSizeCalc } from 'helpers';
 import logo from 'images/logo.svg';
 
-const originWidth = 1854.11;
-const originHeight = 725.13;
-
-type Size = {
-    width: string;
-    height: string;
-};
-
-const calcSize = (requestWidth: number): Size => {
-    return {
-        width: requestWidth + 'px',
-        height: (requestWidth * originHeight) / originWidth + 'px',
-    };
-};
+const getImageSize = createImageSizeCalc({
+    width: 1854.11,
+    height: 725.13,
+});
 
 const Logo = styled('div')(({ theme }) => ({
     backgroundImage: `url(${logo})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
     backgroundPosition: 'center',
-    [theme.breakpoints.down('xs')]: calcSize(240),
-    // [theme.breakpoints.up('md')]: calcSize(300),
-    ...calcSize(300),
+    [theme.breakpoints.down('xs')]: getImageSize(240),
+    ...getImageSize(300),
 }));
 
 export default Logo;

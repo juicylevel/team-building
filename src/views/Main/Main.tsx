@@ -2,20 +2,20 @@ import Intro from 'views/Intro';
 import Greeting from 'views/Greeting';
 import GrandPrize from 'views/GrandPrize';
 import Presents from 'views/Presents';
-import EventDate from 'views/EventDate';
-import Participate from 'views/Participate';
-import EventCountdown from 'views/EventCountdown';
-import Prevresults from 'views/Prevresults';
-import SeeYou from 'views/SeeYou';
-import Footer from 'views/Footer';
+// import EventDate from 'views/EventDate';
+// import Participate from 'views/Participate';
+// import EventCountdown from 'views/EventCountdown';
+// import Prevresults from 'views/Prevresults';
+// import SeeYou from 'views/SeeYou';
+// import Footer from 'views/Footer';
 
 const Main = () => (
     <main>
         <Intro />
         <Greeting />
-        {/* <GrandPrize />
+        <GrandPrize />
         <Presents />
-        <EventDate />
+        {/* <EventDate />
         <Participate />
         <EventCountdown />
         <Prevresults />

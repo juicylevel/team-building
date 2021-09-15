@@ -1,27 +1,36 @@
-import { Typography } from '@material-ui/core';
-import { styled } from '@material-ui/core/styles';
 import { Marker } from 'components';
-import { CenterFlexBox } from 'components/flexBox';
+import { ContentSectionTitle } from 'views/common';
+import { CenterFlexBox, VFlexBox } from 'components/flexBox';
 import { Section } from 'views/common/layout';
+import { styled } from '@material-ui/core/styles';
+import { createImageSizeCalc } from 'helpers';
 
-const Title = styled(Typography)(({ theme }) => ({
-    textTransform: 'uppercase',
-    textAlign: 'center',
-    lineHeight: 1.6,
-    width: '90%',
-    wordBreak: 'break-word',
-    [theme.breakpoints.only('xs')]: {
-        fontSize: '2.1rem',
-    },
+const getPrizeImageSize = createImageSizeCalc({
+    width: 561,
+    height: 440,
+});
+
+const PrizeImage = styled('div')(({ theme }) => ({
+    backgroundImage: `url(./images/hand-card.png)`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    alignSelf: 'flex-end',
+    ...getPrizeImageSize(700),
+    [theme.breakpoints.down('md')]: getPrizeImageSize(550),
+    [theme.breakpoints.down('sm')]: getPrizeImageSize(430),
+    [theme.breakpoints.down('xs')]: getPrizeImageSize(300),
 }));
 
 const GrandPrize = () => (
     <Section>
         <CenterFlexBox height="100%">
-            <Title variant="h3">
-                Победитель получает годовой абонемент в{' '}
-                <Marker>SPORTLIFE</Marker>
-            </Title>
+            <VFlexBox spacing={8} alignItems="center">
+                <ContentSectionTitle variant="h2">
+                    Победитель получает годовой абонемент{' '}
+                    <Marker>SPORTLIFE!</Marker>
+                </ContentSectionTitle>
+                <PrizeImage />
+            </VFlexBox>
         </CenterFlexBox>
     </Section>
 );
