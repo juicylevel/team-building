@@ -15,9 +15,9 @@ const PrizeImage = styled('div')(({ theme }) => ({
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     alignSelf: 'flex-end',
-    ...getPrizeImageSize(700),
-    [theme.breakpoints.down('md')]: getPrizeImageSize(550),
-    [theme.breakpoints.down('sm')]: getPrizeImageSize(430),
+    ...getPrizeImageSize(900),
+    [theme.breakpoints.down('md')]: getPrizeImageSize(750),
+    [theme.breakpoints.down('sm')]: getPrizeImageSize(500),
     [theme.breakpoints.down('xs')]: getPrizeImageSize(300),
 }));
 

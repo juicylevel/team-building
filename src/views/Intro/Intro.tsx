@@ -21,7 +21,7 @@ const StyledSection = styled(Section)(({ theme }) => ({
 }));
 
 const Header = styled(Grid)(({ theme }) => ({
-    boxShadow: '0 5px 10px rgb(0 0 0 / 10%)',
+    //boxShadow: '0 5px 10px rgb(0 0 0 / 10%)',
 }));
 
 const Title = styled(SectionTitle)(({ theme }) => ({

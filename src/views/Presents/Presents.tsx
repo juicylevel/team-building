@@ -1,35 +1,37 @@
-import { Box, Typography } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
-import { Marker } from 'components';
-import { CenterFlexBox, VFlexBox } from 'components/flexBox';
+import { VFlexBox } from 'components/flexBox';
+import { ContentSectionTitle } from 'views/common';
 import { Section } from 'views/common/layout';
 
 const StyledSection = styled(Section)(({ theme }) => ({
-    background: 'url(./images/medal.webp) center no-repeat',
-    backgroundSize: '40%',
+    background: 'url(./images/medal.jpeg) center bottom no-repeat',
+    backgroundSize: 'cover',
+    backgroundPositionX: '25%',
+    paddingTop: '6vh',
+    paddingBottom: '6vh',
+    minHeight: '1000px',
 }));
-
-const Header = styled(VFlexBox)({
-    backgroundColor: 'rgb(0 0 0 / 70%)',
-    color: '#fff',
-    textTransform: 'uppercase',
-    padding: '60px',
-    borderRadius: '10px',
-});
 
 const Presents = () => (
     <StyledSection color="#fffbf0">
-        <CenterFlexBox height="100%">
-            <Header spacing={5} alignItems="center">
-                <Typography variant="h2">
-                    <Box fontWeight="400">
-                        Победителям - <Marker>медали</Marker>
-                    </Box>
-                </Typography>
-                <Typography variant="h3">Участникам - футболки</Typography>
-                <Typography variant="h4">Всем отличное настроение!</Typography>
-            </Header>
-        </CenterFlexBox>
+        <VFlexBox
+            height="100%"
+            alignItems="center"
+            justifyContent="space-between"
+        >
+            <ContentSectionTitle variant="h2">
+                <Box fontWeight="400">Победителям - медали!</Box>
+            </ContentSectionTitle>
+            <VFlexBox spacing={2} alignItems="center" width="100%">
+                <ContentSectionTitle variant="h3">
+                    Участникам - футболки
+                </ContentSectionTitle>
+                <ContentSectionTitle variant="h5">
+                    Всем отличное настроение
+                </ContentSectionTitle>
+            </VFlexBox>
+        </VFlexBox>
     </StyledSection>
 );
 
