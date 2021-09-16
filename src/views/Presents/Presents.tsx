@@ -8,8 +8,6 @@ const StyledSection = styled(Section)(({ theme }) => ({
     background: 'url(./images/medal.jpeg) center bottom no-repeat',
     backgroundSize: 'cover',
     backgroundPositionX: '25%',
-    paddingTop: '6vh',
-    paddingBottom: '6vh',
     minHeight: '1000px',
 }));
 

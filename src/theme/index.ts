@@ -1,7 +1,18 @@
 import { createTheme } from '@material-ui/core/styles';
+import { baseColor, brandColor } from './variables';
 
 const theme = createTheme({
-    palette: {},
+    palette: {
+        primary: {
+            main: brandColor,
+        },
+        action: {
+            focus: '#00FF00',
+        },
+        text: {
+            primary: baseColor,
+        },
+    },
     typography: {
         fontFamily: 'Rubik, sans-serif',
     },
@@ -20,6 +31,14 @@ const theme = createTheme({
                         height: '100%',
                         minHeight: '100%',
                     },
+                },
+            },
+        },
+        MuiLink: {
+            root: {
+                cursor: 'pointer',
+                '&.MuiTypography-colorPrimary': {
+                    color: brandColor,
                 },
             },
         },

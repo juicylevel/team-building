@@ -1,29 +1,27 @@
-import { Typography } from '@material-ui/core';
-import { styled } from '@material-ui/core/styles';
 import { CenterFlexBox } from 'components/flexBox';
+import { useCountDown } from 'hooks';
+import { ContentSectionTitle } from 'views/common';
 import { Section } from 'views/common/layout';
 
-const Title = styled(Typography)(({ theme }) => ({
-    textTransform: 'uppercase',
-    textAlign: 'center',
-    lineHeight: 1.6,
-    width: '90%',
-    wordBreak: 'break-word',
-    [theme.breakpoints.only('xs')]: {
-        fontSize: '2.1rem',
-    },
-}));
-
-const EventCountdown = () => (
-    <Section>
-        <CenterFlexBox width="100%" height="100%">
-            <Title variant="h3">
-                20 дней 5 часов 30 минут 28 секунд
-                <br />
-                До старта
-            </Title>
-        </CenterFlexBox>
-    </Section>
-);
+const EventCountdown = () => {
+    const countDown = useCountDown('2022-05-01T10:00:00');
+    return (
+        <Section>
+            <CenterFlexBox height="100%">
+                <ContentSectionTitle variant="h2">
+                    {countDown ? (
+                        <>
+                            {countDown}
+                            <br />
+                            До старта
+                        </>
+                    ) : (
+                        <>Марафон уже прошёл</>
+                    )}
+                </ContentSectionTitle>
+            </CenterFlexBox>
+        </Section>
+    );
+};
 
 export default EventCountdown;

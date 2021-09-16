@@ -1,7 +1,8 @@
 import { styled } from '@material-ui/core/styles';
+import { brandColor } from 'theme/variables';
 
 const Marker = styled('span')(({ theme }) => ({
-    color: '#54ED00',
+    color: brandColor,
 }));
 
 export default Marker;

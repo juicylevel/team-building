@@ -5,6 +5,10 @@ import { Section } from 'views/common/layout';
 import { styled } from '@material-ui/core/styles';
 import { createImageSizeCalc } from 'helpers';
 
+const StyledSection = styled(Section)(({ theme }) => ({
+    minHeight: '1100px',
+}));
+
 const getPrizeImageSize = createImageSizeCalc({
     width: 561,
     height: 440,
@@ -22,7 +26,7 @@ const PrizeImage = styled('div')(({ theme }) => ({
 }));
 
 const GrandPrize = () => (
-    <Section>
+    <StyledSection>
         <CenterFlexBox height="100%">
             <VFlexBox spacing={8} alignItems="center">
                 <ContentSectionTitle variant="h2">
@@ -32,7 +36,7 @@ const GrandPrize = () => (
                 <PrizeImage />
             </VFlexBox>
         </CenterFlexBox>
-    </Section>
+    </StyledSection>
 );
 
 export default GrandPrize;
