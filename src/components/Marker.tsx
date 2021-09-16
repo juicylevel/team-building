@@ -1,8 +1,7 @@
-import { styled } from '@material-ui/core/styles';
-import { brandColor } from 'theme/variables';
+import { Box } from '@material-ui/core';
 
-const Marker = styled('span')(({ theme }) => ({
-    color: brandColor,
-}));
+const Marker: React.FC = (props) => (
+    <Box component="span" color="primary.main" {...props} />
+);
 
 export default Marker;
