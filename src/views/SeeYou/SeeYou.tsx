@@ -1,25 +1,23 @@
-import { Typography } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
 import { CenterFlexBox } from 'components/flexBox';
+import { ContentSectionTitle } from 'views/common';
 import { Section } from 'views/common/layout';
 
-const Title = styled(Typography)(({ theme }) => ({
-    textTransform: 'uppercase',
-    textAlign: 'center',
-    lineHeight: 1.6,
-    width: '90%',
-    wordBreak: 'break-word',
-    [theme.breakpoints.only('xs')]: {
-        fontSize: '2.1rem',
-    },
+const StyledSection = styled(Section)(({ theme }) => ({
+    background: 'url(./images/running.jpg) center bottom no-repeat',
+    backgroundSize: 'cover',
+    backgroundPositionX: '46%',
 }));
 
 const SeeYou = () => (
-    <Section>
+    <StyledSection>
         <CenterFlexBox width="100%" height="100%">
-            <Title variant="h3">До встречи в Сестрорецке!</Title>
+            <ContentSectionTitle variant="h2">
+                <Box color="#fff">До встречи в Сестрорецке!</Box>
+            </ContentSectionTitle>
         </CenterFlexBox>
-    </Section>
+    </StyledSection>
 );
 
 export default SeeYou;

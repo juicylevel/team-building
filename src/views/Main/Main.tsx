@@ -5,9 +5,9 @@ import Presents from 'views/Presents';
 import EventDate from 'views/EventDate';
 import Participate from 'views/Participate';
 import EventCountdown from 'views/EventCountdown';
-// import Prevresults from 'views/Prevresults';
-// import SeeYou from 'views/SeeYou';
-// import Footer from 'views/Footer';
+import Prevresults from 'views/Prevresults';
+import SeeYou from 'views/SeeYou';
+import Footer from 'views/Footer';
 
 const Main = () => (
     <main>
@@ -18,9 +18,9 @@ const Main = () => (
         <EventDate />
         <Participate />
         <EventCountdown />
-        {/*<Prevresults />
+        <Prevresults />
         <SeeYou />
-        <Footer /> */}
+        <Footer />
     </main>
 );
 

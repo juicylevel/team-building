@@ -1,4 +1,3 @@
-import { Box } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
 import { VFlexBox } from 'components/flexBox';
 import { ContentSectionTitle } from 'views/common';
@@ -19,7 +18,7 @@ const Presents = () => (
             justifyContent="space-between"
         >
             <ContentSectionTitle variant="h2">
-                <Box fontWeight="400">Победителям - медали!</Box>
+                Победителям - медали!
             </ContentSectionTitle>
             <VFlexBox spacing={2} alignItems="center" width="100%">
                 <ContentSectionTitle variant="h3">
