@@ -1,7 +1,5 @@
-import { Typography } from '@material-ui/core';
+import { Header } from 'views/common';
 
-const Results = () => {
-    return <Typography>результаты</Typography>;
-};
+const Results = () => <Header title="Результаты" bgImage="results-intro.jpg" />;
 
 export default Results;
