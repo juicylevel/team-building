@@ -26,7 +26,7 @@ const theme = createTheme({
                 },
                 body: {
                     height: '100%',
-                    backgroundColor: 'white',
+                    backgroundColor: '#333',
                     '& #root': {
                         height: '100%',
                         minHeight: '100%',

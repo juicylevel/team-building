@@ -9,22 +9,22 @@ type HeaderSectionProps = {
     bgImage: string;
 };
 
-const StyledSection = styled(({ spacing, ...other }) => <Section {...other} />)(
-    ({ theme, bgImage }: { theme: Theme } & HeaderSectionProps) => ({
-        background: `url(./images/${bgImage}) bottom no-repeat`,
-        backgroundSize: 'cover',
-        '@media (min-height: 590px)': {
-            paddingTop: '15vh',
-        },
-        [theme.breakpoints.down('xs')]: {
-            backgroundPositionX: '67%',
-            paddingTop: 0,
-        },
-        [theme.breakpoints.down('sm')]: {
-            backgroundPositionX: '70%',
-        },
-    })
-);
+const StyledSection = styled(({ spacing, bgImage, ...other }) => (
+    <Section {...other} />
+))(({ theme, bgImage }: { theme: Theme } & HeaderSectionProps) => ({
+    background: `url(./images/${bgImage}) bottom no-repeat`,
+    backgroundSize: 'cover',
+    '@media (min-height: 590px)': {
+        paddingTop: '15vh',
+    },
+    [theme.breakpoints.down('xs')]: {
+        backgroundPositionX: '67%',
+        paddingTop: 0,
+    },
+    [theme.breakpoints.down('sm')]: {
+        backgroundPositionX: '70%',
+    },
+}));
 
 const Title = styled(SectionTitle)(({ theme }) => ({
     color: '#fff',
